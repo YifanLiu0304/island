@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Yifan (Eva) Liu
+title: Yifan Liu
 
 # Name pronunciation (optional)
 name_pronunciation: ''
@@ -25,7 +25,7 @@ role: PhD candidate
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: Georgia Institute of Technology
-    url: 
+    url: https://spp.gatech.edu/people/person/yifan-liu
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -46,11 +46,10 @@ profiles:
   - icon: academicons/orcid
     url: https://orcid.org/my-orcid?orcid=0000-0001-5261-3958
 
- 
 interests:
+  - Policy Analysis
   - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Energy, Transportation, and Technology Policy
 
 education:
   - area: PhD Artificial Intelligence
@@ -108,9 +107,47 @@ work:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
+# Skills
+# Add your own SVG icons to `assets/media/icons/`
+skills:
+  - name: Technical Skills
+    items:
+      - name: Python
+        description: ''
+        percent: 80
+        icon: code-bracket
+      - name: Data Science
+        description: ''
+        percent: 100
+        icon: chart-bar
+      - name: SQL
+        description: ''
+        percent: 40
+        icon: circle-stack
+  - name: Hobbies
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: Hiking
+        description: ''
+        percent: 60
+        icon: person-simple-walk
+      - name: Cats
+        description: ''
+        percent: 100
+        icon: cat
+      - name: Photography
+        description: ''
+        percent: 80
+        icon: camera
 
-
-
+languages:
+  - name: English
+    percent: 100
+  - name: Chinese
+    percent: 75
+  - name: Portuguese
+    percent: 25
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -143,51 +180,6 @@ awards:
     summary: |
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
-
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python
-        description: ''
-        percent: 80
-        icon: code-bracket
-      - name: Data Science
-        description: ''
-        percent: 100
-        icon: chart-bar
-      - name: SQL
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Scuba diving
-        description: ''
-        percent: 100
-        icon: dive
-      - name: Painting
-        description: ''
-        percent: 80
-        icon: camera
-
-languages:
-  - name: English
-    percent: 90
-  - name: Chinese
-    percent: 98
-  - name: French
-    percent: 30
-  - name: Romanian
-    percent: 40
-    
 
 ## About Me
 
