@@ -47,9 +47,9 @@ profiles:
     url: https://orcid.org/my-orcid?orcid=0000-0001-5261-3958
 
 interests:
-  - Policy Analysis
+  - Computational Policy Analysis
+  - Energy, Transportation, Technology
   - Artificial Intelligence
-  - Energy, Transportation, and Technology Policy
 
 education:
   - area: PhD Public Policy
@@ -70,7 +70,7 @@ education:
 
       # Courses included:
       # - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: MPA Environmental Economics and Policy
+  - area: MPA Environmental Economics
     institution: Cornell University
     date_start: 2019-08-26
     date_end: 2021-05-31
@@ -90,7 +90,7 @@ work:
     # summary: |2-
       # Responsibilities include:
       # - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Doctoral Student
+  - position: Doctoral Researcher
     company_name: Data Science and Policy Lab, Georgia Tech
     company_url: https://datasciencepolicy.gatech.edu
     company_logo: ''
