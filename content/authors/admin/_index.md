@@ -3,7 +3,7 @@
 title: Yifan (Eva) Liu
 
 # Name pronunciation (optional)
-# name_pronunciation: Yifan Liu
+name_pronunciation: ''
 
 # Full name (for SEO)
 first_name: Yifan
