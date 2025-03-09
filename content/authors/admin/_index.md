@@ -55,7 +55,7 @@ education:
   - area: PhD Public Policy
     institution: Georgia Tech
     date_start: 2021-08-20
-    date_end: 2026-05-30
+    date_end: ''
     # summary: |
       # Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     # button:
@@ -64,7 +64,7 @@ education:
   - area: MS Computer Science
     institution: Georgia Tech
     date_start: 2021-08-20
-    date_end: 2026-05-30
+    date_end: ''
     # summary: |
       # GPA: 4.0/4.0
 
@@ -95,7 +95,7 @@ work:
     company_url: https://datasciencepolicy.gatech.edu
     company_logo: ''
     date_start: 2021-08-20
-    date_end: 2026-05-30
+    date_end: ''
     # summary: |
       # Responsibilities include:
       # - Migrated infrastructure to a new data center
