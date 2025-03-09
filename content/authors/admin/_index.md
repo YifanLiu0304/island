@@ -3,7 +3,7 @@
 title: Yifan (Eva) Liu
 
 # Name pronunciation (optional)
-# name_pronunciation: Chien Shiung Wu
+# name_pronunciation: Yifan Liu
 
 # Full name (for SEO)
 first_name: Yifan
@@ -45,6 +45,7 @@ profiles:
     url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/
+
 
 interests:
   - Artificial Intelligence
@@ -107,6 +108,7 @@ work:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
+
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
@@ -143,11 +145,14 @@ skills:
 
 languages:
   - name: English
-    percent: 100
+    percent: 90
   - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+    percent: 98
+  - name: French
+    percent: 30
+  - name: Romanian
+    percent: 40
+    
 
 # Awards.
 #   Add/remove as many awards below as you like.
