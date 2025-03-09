@@ -52,60 +52,53 @@ interests:
   - Energy, Transportation, and Technology Policy
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
+  - area: PhD Public Policy
+    institution: Georgia Tech
+    date_start: 2021-08-20
+    date_end: 2026-05-30
+    # summary: |
+      # Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+    # button:
+      # text: 'Read Thesis'
+      # url: 'https://example.com'
+  - area: MS Computer Science
+    institution: Georgia Tech
+    date_start: 2021-08-20
+    date_end: 2026-05-30
+    # summary: |
+      # GPA: 4.0/4.0
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
+      # Courses included:
+      # - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - area: MPA Environmental Economics and Policy
+    institution: Cornell University
+    date_start: 2019-08-26
+    date_end: 2021-05-31
+    # summary: |
+      # GPA: 3.97/4.0
       
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      # Courses included:
+      # - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Visiting Doctoral Researcher
+    company_name: Harvard Business School
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
+    date_start: 2023-09-01
     date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
+    # summary: |2-
+      # Responsibilities include:
+      # - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - position: Doctoral Student
+    company_name: Data Science and Policy Lab, Georgia Tech
+    company_url: https://datasciencepolicy.gatech.edu
     company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    date_start: 2021-08-20
+    date_end: 2026-05-30
+    # summary: |
+      # Responsibilities include:
+      # - Migrated infrastructure to a new data center
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
