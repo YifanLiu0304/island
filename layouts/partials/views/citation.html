@@ -13,35 +13,37 @@
   </div>
   {{end}}
 
-  {{ $title := .Title | default .Page.Title }}
-  {{ $authors := .Params.authors | default .Page.Params.authors }}
   <div class="article-title">
     <h2>
-      {{ if .Params.url }}
-        <a href="{{ .Params.url }}" target="_blank" rel="noopener">{{ $title }}</a>
+      {{ if $page.Params.url }}
+        <a href="{{ $page.Params.url }}" target="_blank" rel="noopener">{{ $page.Title }}</a>
       {{ else }}
-        {{ $title }}
+        {{ $page.Title }}
       {{ end }}
     </h2>
   </div>
+
   <div class="article-authors">
-    {{ with $authors }}
+    {{ with $page.Params.authors }}
       {{ delimit . ", " }}
     {{ end }}
   </div>
+
   <div class="article-style">
-    {{ .Params.publication | markdownify }}
+    {{ $page.Params.publication | markdownify }}
   </div>
+
   <div class="article-metadata">
-    {{ $date := .Date.Format "Jan 2, 2006" }}
+    {{ $date := $page.Date.Format "Jan 2, 2006" }}
     {{ $date }}
   </div>
+
   <div class="article-abstract-row">
-    <button class="abstract-toggle-btn" onclick="toggleAbstract('abstract-{{ .File.UniqueID }}')">Abstract</button>
-    <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $title }}" class="email-btn">Email me for details</a>
+    <button class="abstract-toggle-btn" onclick="toggleAbstract('abstract-{{ $page.File.UniqueID }}')">Abstract</button>
+    <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $page.Title }}" class="email-btn">Email me for details</a>
   </div>
-  <div id="abstract-{{ .File.UniqueID }}" class="abstract-content" style="display: none;">
-    {{ .Params.abstract | markdownify }}
+  <div id="abstract-{{ $page.File.UniqueID }}" class="abstract-content" style="display: none;">
+    {{ $page.Params.abstract | markdownify }}
   </div>
 </div>
 
