@@ -1,96 +1,39 @@
-{{ $page := . }}
+{{ $item := .item }}
 
-<div class="card-simple">
-  {{ $resource := ($page.Resources.ByType "image").GetMatch "*featured*" }}
-  {{ $anchor := $page.Params.image.focal_point | default "Smart" }}
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
-  {{ with $resource }}
-  {{ $image := .Fill (printf "808x455 q90 %s" $anchor) }}
-  <div>
-    <a href="{{ $page.RelPermalink }}">
-      <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $page.Title }}">
+  {{/* APA Style Citation */}}
+  <span class="article-metadata">
+    {{ $item.Title }}
+    {{- with $item.Params.authors -}}
+      {{- $len := len . -}}
+      {{- range $index, $author := . -}}
+        {{- if eq $index (sub $len 1) -}}
+          & {{ $author }}.
+        {{- else if gt $index 0 -}}
+          , {{ $author }}
+        {{- else -}}
+          {{ $author }}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    ({{ $item.Date.Format "2006" }}).
+    {{ with $item.Params.publication }}{{ . }}{{ end }}
+  </span>
+
+  {{/* Buttons */}}
+  <div class="btn-links" style="margin-top: 0.5rem">
+    {{ if $item.Params.abstract }}
+      <a class="btn btn-sm" href="#" style="background-color: #90EE90; color: #000000; margin-right: 0.5rem">
+        Abstract
+      </a>
+    {{ end }}
+    <a class="btn btn-sm" href="mailto:your@email.com?subject=Request for paper: {{ $item.Title }}" style="background-color: #90EE90; color: #000000">
+      Email me for details
     </a>
   </div>
-  {{end}}
-
-  <div class="article-title">
-    <h2>
-      {{ if $page.Params.url }}
-        <a href="{{ $page.Params.url }}" target="_blank" rel="noopener">{{ $page.Title }}</a>
-      {{ else }}
-        {{ $page.Title }}
-      {{ end }}
-    </h2>
-  </div>
-
-  <div class="article-authors">
-    {{ with $page.Params.authors }}
-      {{ delimit . ", " }}
-    {{ end }}
-  </div>
-
-  <div class="article-style">
-    {{ $page.Params.publication | markdownify }}
-  </div>
-
-  <div class="article-metadata">
-    {{ $date := $page.Date.Format "Jan 2, 2006" }}
-    {{ $date }}
-  </div>
-
-  <div class="article-abstract-row">
-    <button class="abstract-toggle-btn" onclick="toggleAbstract('abstract-{{ $page.File.UniqueID }}')">Abstract</button>
-    <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $page.Title }}" class="email-btn">Email me for details</a>
-  </div>
-  <div id="abstract-{{ $page.File.UniqueID }}" class="abstract-content" style="display: none;">
-    {{ $page.Params.abstract | markdownify }}
-  </div>
 </div>
-
-<style>
-.article-title {
-  margin-bottom: 0.2em;
-}
-.article-authors {
-  color: #555;
-  font-size: 1em;
-  margin-bottom: 0.4em;
-}
-.article-abstract-row {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em;
-}
-.abstract-toggle-btn, .email-btn {
-  font-weight: bold;
-  color: #2e7d4f;
-  background: none;
-  border: 2px solid #81c784;
-  border-radius: 6px;
-  font-size: 1em;
-  padding: 0.2em 0.6em;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  text-decoration: none;
-  display: inline-block;
-}
-.abstract-toggle-btn:hover, .email-btn:hover {
-  background: #81c784;
-  color: #fff;
-}
-.abstract-content {
-  color: #6c6c6c;
-  margin-left: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-  padding: 1em;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-}
-</style>
 
 <script>
 function toggleAbstract(id) {
