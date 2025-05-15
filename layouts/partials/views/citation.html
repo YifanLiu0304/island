@@ -14,7 +14,7 @@
   {{end}}
 
   <div class="article-title">
-    <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+    <h2>{{ $page.Title | markdownify }}</h2>
   </div>
 
   <div class="article-authors">
