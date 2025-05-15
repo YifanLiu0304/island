@@ -30,29 +30,6 @@ sections:
           size: cover
           position: center
           parallax: false
-  - block: markdown
-    content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: |-
-        Hello World! I am a PhD candidate at Georgia Tech, majoring in Public Policy and Computer Science. As a computational social scientist, I work on the computational analysis of social and policy issues, as well as proposing policies for the responsible use of AI.
-
-        I apply a range of quantitative and qualitative methods to investigate the social challenges and inform evidence-based decision-making in energy, transportation, and technology policy. 
-        
-        Please reach out to collaborate 😃
-    design:
-      columns: '1'
-  - block: collection
-    id: papers
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
   - block: collection
     content:
       title: Recent Publications
@@ -63,16 +40,8 @@ sections:
         exclude_featured: false
     design:
       view: citation
-  # - block: collection
-    # id: talks
-    # content:
-      # title: Recent & Upcoming Talks
-      # filters:
-        # folders:
-          # - event
-    # design:
-      # view: article-grid
-      # columns: 1
+      show_abstract: true
+      show_email: true
   - block: collection
     id: news
     content:
