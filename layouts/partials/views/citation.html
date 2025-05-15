@@ -26,28 +26,47 @@
     {{ $date }}
   </div>
 
-  <div class="article-actions">
-    {{ if $page.Params.abstract }}
-    <button class="btn btn-outline-primary btn-sm" onclick="toggleAbstract('abstract-{{ $page.File.UniqueID }}')">
-      <i class="fas fa-file-alt"></i> Abstract
-    </button>
-    {{ end }}
-    <a href="mailto:yifan.liu@gatech.edu?subject=Regarding: {{ $page.Title }}" class="btn btn-outline-primary btn-sm">
-      <i class="fas fa-envelope"></i> Details (email me)
-    </a>
+  <div class="article-abstract-row">
+    <button class="abstract-toggle-btn" onclick="toggleAbstract('abstract-{{ $page.File.UniqueID }}')">Abstract</button>
+    <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $page.Title }}" class="email-btn">Email me for details</a>
   </div>
-
-  {{ if $page.Params.abstract }}
   <div id="abstract-{{ $page.File.UniqueID }}" class="abstract-content" style="display: none;">
     {{ $page.Params.abstract | markdownify }}
   </div>
-  {{ end }}
 </div>
 
 <style>
+.article-abstract-row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+}
+.abstract-toggle-btn, .email-btn {
+  font-weight: bold;
+  color: #b59d4b;
+  background: none;
+  border: 2px solid #b59d4b;
+  border-radius: 6px;
+  font-size: 1em;
+  padding: 0.2em 0.6em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.abstract-toggle-btn:hover, .email-btn:hover {
+  background: #b59d4b;
+  color: #fff;
+}
 .abstract-content {
-  margin-top: 1rem;
-  padding: 1rem;
+  color: #6c6c6c;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  padding: 1em;
   background-color: #f8f9fa;
   border-radius: 4px;
 }
