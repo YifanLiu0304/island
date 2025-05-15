@@ -7,29 +7,31 @@
   {{ with $resource }}
   {{ $image := .Fill (printf "808x455 q90 %s" $anchor) }}
   <div>
-    <a href="{{ $page.RelPermalink }}">
-      <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $page.Title }}">
-    </a>
+    <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $page.Title }}">
   </div>
   {{end}}
 
   <div class="article-title">
-    <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+    <h2>{{ $page.Title | markdownify }}</h2>
   </div>
 
   <div class="article-authors">
     {{ with $page.Params.authors }}
-      {{ delimit . ", " }}
+    <span class="authors">{{ delimit . ", " }}</span>
     {{ end }}
   </div>
 
+  {{ if $page.Params.publication }}
   <div class="article-style">
     {{ $page.Params.publication | markdownify }}
   </div>
+  {{ end }}
 
   <div class="article-metadata">
-    {{ $date := $page.Date.Format "Jan 2, 2006" }}
-    {{ $date }}
+    {{ if $page.Params.date }}
+      {{ $date := $page.Date.Format "Jan 2, 2006" }}
+      {{ $date }}
+    {{ end }}
   </div>
 
   <div class="article-abstract-row">
@@ -43,15 +45,25 @@
 
 <style>
 .article-title {
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+.article-title h2 {
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 600;
 }
 .article-authors {
   color: #555;
   font-size: 1em;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.8em;
+}
+.article-style {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0.5em;
 }
 .article-abstract-row {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
   display: flex;
   flex-wrap: wrap;
