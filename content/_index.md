@@ -40,6 +40,8 @@ sections:
         exclude_featured: false
     design:
       view: citation
+      show_abstract: true
+      show_email: true
   - block: collection
     id: news
     content:
