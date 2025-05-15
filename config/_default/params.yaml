@@ -8,11 +8,6 @@ appearance:
   mode: system
   color: emerald
 
-# Publications
-publications:
-  view: citation
-  citation_style: apa
-
 # SEO
 marketing:
   seo:
