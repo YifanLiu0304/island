@@ -17,6 +17,12 @@
     <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
   </div>
 
+  <div class="article-authors">
+    {{ with $page.Params.authors }}
+      {{ delimit . ", " }}
+    {{ end }}
+  </div>
+
   <div class="article-style">
     {{ $page.Params.publication | markdownify }}
   </div>
@@ -36,6 +42,14 @@
 </div>
 
 <style>
+.article-title {
+  margin-bottom: 0.2em;
+}
+.article-authors {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
 .article-abstract-row {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -46,9 +60,9 @@
 }
 .abstract-toggle-btn, .email-btn {
   font-weight: bold;
-  color: #b59d4b;
+  color: #2e7d4f;
   background: none;
-  border: 2px solid #b59d4b;
+  border: 2px solid #81c784;
   border-radius: 6px;
   font-size: 1em;
   padding: 0.2em 0.6em;
@@ -58,7 +72,7 @@
   display: inline-block;
 }
 .abstract-toggle-btn:hover, .email-btn:hover {
-  background: #b59d4b;
+  background: #81c784;
   color: #fff;
 }
 .abstract-content {
