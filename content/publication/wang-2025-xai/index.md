@@ -1,5 +1,6 @@
 ---
-title: '[“Good” XAI Design: For What? In Which Ways?](https://doi.org/10.1145/3706599.3720036)'
+title: "“Good” XAI Design: For What? In Which Ways?"
+url: "https://doi.org/10.1145/3706599.3720036"
 authors:
 - Lingyu Wang
 - Yifan Liu

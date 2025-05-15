@@ -1,5 +1,6 @@
 ---
-title: '[Effectiveness of Health and Environmental Information Provision in Promoting Sustainable Travel Modes](https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/23099)'
+title: "Effectiveness of Health and Environmental Information Provision in Promoting Sustainable Travel Modes"
+url: "https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/23099"
 authors:
 - Viswa Sri Rupa Anne
 - Md Gulam Kibria

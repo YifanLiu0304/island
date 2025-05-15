@@ -14,7 +14,13 @@
   {{end}}
 
   <div class="article-title">
-    <h2>{{ $page.Title | markdownify }}</h2>
+    <h2>
+      {{ if $page.Params.url }}
+        <a href="{{ $page.Params.url }}" target="_blank" rel="noopener">{{ $page.Title }}</a>
+      {{ else }}
+        {{ $page.Title }}
+      {{ end }}
+    </h2>
   </div>
 
   <div class="article-authors">
