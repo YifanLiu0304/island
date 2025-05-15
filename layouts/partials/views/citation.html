@@ -17,12 +17,12 @@
 
   <div class="article-authors">
     {{ with $page.Params.authors }}
-    <span class="authors">{{ delimit . ", " }}</span>
+      {{ delimit . ", " | markdownify }}
     {{ end }}
   </div>
 
   {{ if $page.Params.publication }}
-  <div class="article-style">
+  <div class="article-publication">
     {{ $page.Params.publication | markdownify }}
   </div>
   {{ end }}
@@ -30,7 +30,7 @@
   <div class="article-metadata">
     {{ if $page.Params.date }}
       {{ $date := $page.Date.Format "Jan 2, 2006" }}
-      {{ $date }}
+      <span class="article-date">{{ $date }}</span>
     {{ end }}
   </div>
 
@@ -39,11 +39,20 @@
     <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $page.Title }}" class="email-btn">Email me for details</a>
   </div>
   <div id="abstract-{{ $page.File.UniqueID }}" class="abstract-content" style="display: none;">
-    {{ $page.Params.abstract | markdownify }}
+    {{ with $page.Params.abstract }}
+      {{ . | markdownify }}
+    {{ end }}
   </div>
 </div>
 
 <style>
+.card-simple {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 .article-title {
   margin-bottom: 0.5em;
 }
@@ -51,35 +60,45 @@
   margin: 0;
   font-size: 1.4em;
   font-weight: 600;
+  line-height: 1.3;
+}
+.article-title a {
+  color: inherit;
+  text-decoration: none;
 }
 .article-authors {
   color: #555;
   font-size: 1em;
   margin-bottom: 0.8em;
 }
-.article-style {
+.article-publication {
   font-size: 0.9em;
   color: #666;
   margin-bottom: 0.5em;
+  font-style: italic;
+}
+.article-metadata {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
 }
 .article-abstract-row {
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5em;
 }
 .abstract-toggle-btn, .email-btn {
-  font-weight: bold;
+  font-weight: 500;
   color: #2e7d4f;
   background: none;
   border: 2px solid #81c784;
   border-radius: 6px;
-  font-size: 1em;
-  padding: 0.2em 0.6em;
+  font-size: 0.9em;
+  padding: 0.3em 0.8em;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
 }
@@ -88,13 +107,13 @@
   color: #fff;
 }
 .abstract-content {
-  color: #6c6c6c;
-  margin-left: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
+  color: #666;
+  margin-top: 0.8em;
   padding: 1em;
   background-color: #f8f9fa;
   border-radius: 4px;
+  font-size: 0.95em;
+  line-height: 1.5;
 }
 </style>
 
