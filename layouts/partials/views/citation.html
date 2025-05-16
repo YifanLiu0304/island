@@ -1,0 +1,40 @@
+{{/* Citation view */}}
+
+{{ $item := .item }}
+
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+
+  {{/* APA Style */}}
+  {{ if $item.Params.url_pdf }}
+    <a href="{{ $item.Params.url_pdf }}" target="_blank">{{ $item.Title }}</a>.
+  {{ else }}
+    {{ $item.Title }}.
+  {{ end }}
+
+  {{/* Author */}}
+  {{ $authorLen := len $item.Params.authors }}
+  {{ if gt $authorLen 0 }}
+  <div class="article-metadata">
+    {{ partial "page_metadata_authors" $item }}
+  </div>
+  {{ end }}
+
+  {{/* Journal/Event details */}}
+  {{ if $item.Params.publication }}
+    <em>{{ $item.Params.publication | markdownify }}</em>,
+  {{ else if $item.Params.event }}
+    {{ with $item.Params.event_url }}<a href="{{ . }}" target="_blank">{{ end }}
+    {{ $item.Params.event | markdownify }}
+    {{ if $item.Params.event_url }}</a>{{ end }},
+  {{ end }}
+  {{ $item.Date.Year }}
+
+  {{ if $item.Params.doi }}
+    <div class="btn-links">
+      <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/{{ $item.Params.doi }}" target="_blank">
+        DOI
+      </a>
+    </div>
+  {{ end }}
+</div> 
