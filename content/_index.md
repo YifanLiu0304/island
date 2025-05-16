@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Hello World! I am a PhD candidate at Georgia Tech, majoring in Public Policy and Computer Science. As a computational social scientist, I work on the computational analysis of social and policy issues, as well as proposing policies for the responsible use of AI.
+        Hello World! I am a PhD candidate at Georgia Tech, majoring in Public Policy and Computer Science. As a computational social scientist, I use AI/ML and computational methods to study energy, transportation, and technology policies. 
 
         I apply a range of quantitative and qualitative methods to investigate the social challenges and inform evidence-based decision-making in energy, transportation, and technology policy. 
         
