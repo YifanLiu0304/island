@@ -2,13 +2,12 @@
 
 <div style="margin-bottom: 2rem;">
     <div style="color: #000000; font-size: 1.1rem; margin-bottom: 1rem;">
-        {{ $item.Title }}
-    </div>
-    
-    <div style="color: #666666; margin-bottom: 1rem;">
         {{ with $item.Params.authors }}
-            {{ delimit . ", " }}
+            {{ delimit . ", " | markdownify }}
         {{ end }}
+        ({{ $item.Date.Format "2006" }}). 
+        <a href="{{ $item.Params.doi }}" style="color: #000000; text-decoration: underline;">{{ $item.Title }}</a>. 
+        {{ $item.Params.publication }}.
     </div>
 
     <div style="display: flex; gap: 10px;">
