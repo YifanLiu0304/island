@@ -1,21 +1,15 @@
 ---
-title: 🎉 Easily create your own simple yet highly customizable blog
-summary: Take full control of your personal brand and privacy by migrating away from the big tech platforms!
-date: 2023-10-27
-
-# Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+title: I will be presenting at the Alliance for Research on Corporate Sustainability (ARCS) Annual Research Conference in Paris
+summary: 17th Annual ARCS Research Conference at HEC Paris
+date: 2024-03-15
+external_link: https://corporate-sustainability.org/conferences/
 
 authors:
   - admin
-  - Ted
 
 tags:
-  - Academic
-  - Hugo Blox
-  - Markdown
+  - Conference
+  - Sustainability
 ---
 
 Welcome 👋
