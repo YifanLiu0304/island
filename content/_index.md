@@ -4,11 +4,17 @@ title: ""
 date: 2022-10-24
 type: landing
 
+design:
+  # Default section spacing
+  spacing: "6rem"
+
 sections:
   - block: resume-biography-3
     content:
+      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
+      # Show a call-to-action button under your biography? (optional)
       button:
         text: Download CV
         url: uploads/CV_YifanLiu_20250309.pdf
@@ -17,6 +23,7 @@ sections:
       background:
         color: black
         image:
+          # Add your image background to `assets/media/`.
           filename: stacked-peaks.svg
           filters:
             brightness: 1.0
@@ -24,24 +31,59 @@ sections:
           position: center
           parallax: false
   - block: markdown
-    id: research
     content:
-      title: Research
-      text: |
-        **Liu, Y.**, Francis, A., Hollauer, C., Lawson, M. C., Shaikh, O., Cotsman, A., Bhardwaj, K., Banboukian, A., Webb, A., Asensio, O. I. (2023). [Reliability of electric vehicle charging infrastructure: A cross-lingual deep learning approach](https://doi.org/10.1016/j.commtr.2023.100095). *Communications in Transportation Research, 3*, 100095.
+      title: '📚 My Research'
+      subtitle: ''
+      text: |-
+        Hello World! I am a PhD candidate at Georgia Tech, majoring in Public Policy and Computer Science. As a computational social scientist, I work on the computational analysis of social and policy issues, as well as proposing policies for the responsible use of AI.
+
+        I apply a range of quantitative and qualitative methods to investigate the social challenges and inform evidence-based decision-making in energy, transportation, and technology policy. 
+        
+        Please reach out to collaborate 😃
     design:
       columns: '1'
-      spacing:
-        padding: ["2rem", "0", "2rem", "0"]
-      font_size: L
+  - block: collection
+    id: papers
+    content:
+      title: Featured Publications
+      filters:
+        folders:
+          - publication
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 2
+  - block: collection
+    content:
+      title: Recent Publications
+      text: ""
+      filters:
+        folders:
+          - publication
+        exclude_featured: false
+    design:
+      view: citation
+  # - block: collection
+    # id: talks
+    # content:
+      # title: Recent & Upcoming Talks
+      # filters:
+        # folders:
+          # - event
+    # design:
+      # view: article-grid
+      # columns: 1
   - block: collection
     id: news
     content:
       title: Recent News
       subtitle: ''
       text: ''
+      # Page type to display. E.g. post, talk, publication...
       page_type: post
+      # Choose how many pages you would like to display (0 = all pages)
       count: 5
+      # Filter on criteria
       filters:
         author: ""
         category: ""
@@ -50,10 +92,14 @@ sections:
         exclude_future: false
         exclude_past: false
         publication_type: ""
+      # Choose how many pages you would like to offset by
       offset: 0
+      # Page order: descending (desc) or ascending (asc) date.
       order: desc
     design:
+      # Choose a layout view
       view: date-title-summary
+      # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
   - block: cta-card
