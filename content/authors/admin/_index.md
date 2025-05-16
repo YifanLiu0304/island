@@ -150,11 +150,13 @@ languages:
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
   - title: Outstanding Ph.D. Student Award
+    url: https://www.instagram.com/p/DIhLdMAv7Vn/
     date: '2025-04-23'
     awarder: Georgia Tech School of Public Policy
     summary: |
       Recognized for academic excellenece and research advances in deploying machine learning and AI for causal inference and prediction in energy and environmental policy analysis.
   - title: Best Paper Award
+    url: https://www.instagram.com/p/DFLH1vWRW4p/
     date: '2025-01-15'
     awarder: National Academies Transportation Research Board (TRB)
     summary: |
