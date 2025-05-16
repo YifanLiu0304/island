@@ -1,38 +1,69 @@
 {{ $item := . }}
 
-<div style="margin: 2rem; font-size: 1.1rem; line-height: 1.6;">
-    {{ range $index, $author := $item.Params.authors }}
-        {{- if eq $index 0 }}{{ $author | markdownify }}
-        {{- else }}, {{ $author | markdownify }}
-        {{- end -}}
-    {{ end }}
-    ({{ $item.Date.Format "2006" }}).
-    <a href="{{ $item.Params.doi }}" style="color: inherit; text-decoration: underline;">{{ $item.Title }}</a>.
-    {{ $item.Params.publication }}
-</div>
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
-<div style="margin: 2rem 0; font-size: 1rem; line-height: 1.5;">
-    <!-- Buttons -->
-    <div style="display: flex; gap: 1rem;">
-        <button onclick="toggleAbstract()" 
-                style="border: 2px solid #81c784; background: none; color: #2e7d4f; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-            Abstract
-        </button>
-        <a href="mailto:liuyifan@gatech.edu" 
-           style="border: 2px solid #81c784; background: none; color: #2e7d4f; padding: 8px 16px; border-radius: 6px; text-decoration: none;">
-            Email me for details
-        </a>
-    </div>
+  {{/* APA Style */}}
+  <span class="article-metadata li-cite-author">
+    {{ range $index, $value := .Params.authors }}
+      {{- if eq $index 0 }}
+        {{ $value | markdownify }}
+      {{- else }}
+        {{- if eq $index (sub (len $.Params.authors) 1) }}, & {{ $value | markdownify }}
+        {{- else }}, {{ $value | markdownify }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </span>
+  <span class="article-metadata">({{ $item.Date.Format "2006" }}). </span>
+  <a href="{{ $item.Params.links.url }}" class="article-title">{{ $item.Title }}</a>.
+  {{ with $item.Params.publication }}
+    <span class="article-metadata">{{ . | markdownify }}</span>
+  {{ end }}
 
-    <!-- Abstract -->
-    <div id="abstract" style="display: none; margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 4px;">
-        {{ $item.Params.abstract }}
-    </div>
+  <div class="btn-links">
+    <button class="btn btn-outline-primary btn-sm" onclick="toggleAbstract('abstract-{{ $item.File.UniqueID }}')" style="border-color: #81c784; color: #2e7d4f;">
+      Abstract
+    </button>
+    <a class="btn btn-outline-primary btn-sm" href="mailto:liuyifan@gatech.edu" style="border-color: #81c784; color: #2e7d4f;">
+      Email me for details
+    </a>
+  </div>
+
+  <div class="abstract-collapse" id="abstract-{{ $item.File.UniqueID }}" style="display: none; margin-top: 1rem; padding: 1rem; background-color: #f5f5f5; border-radius: 4px;">
+    {{ $item.Params.abstract | markdownify }}
+  </div>
 </div>
 
 <script>
-function toggleAbstract() {
-    var x = document.getElementById('abstract');
-    x.style.display = x.style.display === 'none' ? 'block' : 'none';
+function toggleAbstract(id) {
+  var x = document.getElementById(id);
+  x.style.display = x.style.display === 'none' ? 'block' : 'none';
 }
-</script> 
+</script>
+
+<style>
+.article-metadata {
+  margin-right: 0.2rem;
+}
+.btn-outline-primary {
+  border: 2px solid;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline-primary:hover {
+  background-color: #81c784;
+  color: white !important;
+}
+.btn-links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+</style> 
