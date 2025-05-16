@@ -125,14 +125,17 @@ skills:
         description: ''
         percent: 90
         icon: 🧗
+        icon_pack: emoji
       - name: Scuba Diving
         description: ''
         percent: 85
         icon: 🤿
+        icon_pack: emoji
       - name: Photography
         description: ''
         percent: 85
         icon: 📷
+        icon_pack: emoji
 
 languages:
   - name: Chinese
