@@ -16,7 +16,14 @@
   {{ $authorLen := len $item.Params.authors }}
   {{ if gt $authorLen 0 }}
   <div class="article-metadata">
-    {{ partial "page_metadata_authors" $item }}
+    {{ range $index, $author := $item.Params.authors }}
+      {{- if eq $author "Yifan Liu" -}}
+        <strong>{{ $author }}</strong>
+      {{- else -}}
+        {{ $author }}
+      {{- end -}}
+      {{- if lt $index (sub $authorLen 1) -}}, {{ end }}
+    {{ end }}
   </div>
   {{ end }}
 
