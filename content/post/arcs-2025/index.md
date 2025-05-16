@@ -1,6 +1,6 @@
 ---
 title: Upcoming Presentation at ARCS 2025
-date: '2024-06-01'
+date: '2025-06-01'
 summary: I will present my research on EV charging infrastructure reliability at the Alliance for Research on Corporate Sustainability (ARCS) Conference, taking place at HEC Paris from June 1-4, 2025.
 ---
 
