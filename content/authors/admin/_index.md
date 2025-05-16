@@ -153,22 +153,12 @@ awards:
     date: '2025-04-23'
     awarder: Georgia Tech School of Public Policy
     summary: |
-      Recognized for deploying machine learning and AI for causal inference and prediction in energy and environmental policy analysis.
+      Recognized for academic excellenece and research advances in deploying machine learning and AI for causal inference and prediction in energy and environmental policy analysis.
   - title: Best Paper Award
     date: '2025-01-15'
     awarder: National Academies Transportation Research Board (TRB)
     summary: |
       Awarded for the paper "Effectiveness of Health and Environmental Provision to Promote Sustainable Travel Modes" at the TRB conference in Washington, D.C.
-  - title: Graduate Research Fellowship
-    date: '2023-08-01'
-    awarder: Brook Byers Institute for Sustainable Systems
-    summary: |
-      Selected for innovative research in sustainable infrastructure and policy analysis using computational methods.
-  - title: Dean's Fellowship
-    date: '2021-08-20'
-    awarder: Georgia Institute of Technology
-    summary: |
-      Merit-based fellowship awarded to outstanding incoming PhD students in Public Policy.
 ---
 
 ## About Me
