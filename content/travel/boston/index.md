@@ -152,4 +152,4 @@ gallery_item:
 
 ---
 
-_For personalized recommendations or questions about Boston's innovation ecosystem, feel free to [email me](mailto:your@email.com)._ 
+_Feel free to [email me](mailto:liuyifan@gatech.edu)._ 

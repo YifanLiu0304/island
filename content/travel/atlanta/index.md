@@ -166,4 +166,4 @@ gallery_item:
 
 ---
 
-_For tech scene introductions or local recommendations, feel free to [email me](mailto:your@email.com)._ 
+_Feel free to [email me](mailto:liuyifan@gatech.edu)._ 
