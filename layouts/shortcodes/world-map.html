@@ -5,9 +5,14 @@
 <style>
 #travel-map {
     height: 600px;
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-radius: 0;
+    box-shadow: none;
     margin-bottom: 2em;
 }
 .city-popup {
@@ -53,6 +58,8 @@
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 .city-btn {
     padding: 8px 16px;
@@ -93,10 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Boston",
             coordinates: [42.3601, -71.0589],
-            url: "/travel/boston",
+            url: "../travel/boston",
             quickInfo: {
-                known: "Education, History, Innovation",
-                bestTime: "September-October",
                 highlights: "Freedom Trail, Harvard, Fenway"
             },
             description: "A city where colonial history meets cutting-edge innovation"
@@ -104,10 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Atlanta",
             coordinates: [33.7490, -84.3880],
-            url: "/travel/atlanta",
+            url: "../travel/atlanta",
             quickInfo: {
-                known: "Southern Culture, Civil Rights, Tech Hub",
-                bestTime: "March-May, September-November",
                 highlights: "Georgia Tech, Beltline, MLK Sites"
             },
             description: "The cultural and economic center of the American South"
@@ -115,10 +118,8 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Paris",
             coordinates: [48.8566, 2.3522],
-            url: "/travel/paris",
+            url: "../travel/paris",
             quickInfo: {
-                known: "Art, Cuisine, Fashion",
-                bestTime: "April-June, September-October",
                 highlights: "Louvre, Eiffel Tower, Le Marais"
             },
             description: "The City of Light, where every street tells a story"
@@ -141,8 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3>${city.name}</h3>
                     <div class="meta">${city.description}</div>
                     <div class="quick-info">
-                        <strong>Known for:</strong> ${city.quickInfo.known}<br>
-                        <strong>Best time:</strong> ${city.quickInfo.bestTime}<br>
                         <strong>Highlights:</strong> ${city.quickInfo.highlights}
                     </div>
                     <a href="${city.url}" class="btn-explore">Explore ${city.name}</a>
