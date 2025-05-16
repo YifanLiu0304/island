@@ -14,7 +14,7 @@ authors:
 - Anne Webb
 - Omar I Asensio
 date: '2025-02-01'
-publishDate: '2024-03-09'
+publishDate: '2023-12-01'
 publication_types:
 - article-journal
 publication: '*Communications in Transportation Research*'

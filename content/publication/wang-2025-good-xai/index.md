@@ -5,7 +5,7 @@ authors:
 - Yifan Liu
 - Ashok K. Goel
 date: '2025-01-01'
-publishDate: '2024-03-09'
+publishDate: '2025-04-25'
 publication_types:
 - paper-conference
 publication: 'CHI EA ''25: Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing Systems'

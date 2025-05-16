@@ -31,14 +31,14 @@
     {{ $item.Params.event | markdownify }}
     {{ if $item.Params.event_url }}</a>{{ end }},
   {{ end }}
-  {{ $item.Date.Year }}
+  {{ dateFormat "2006" $item.Params.publishDate }}
 
   {{/* Buttons */}}
   <div style="margin-top: 0.5rem;">
     <button onclick="toggleAbstract(this)" class="btn btn-sm" style="background-color: white; color: #81c784; border: 1px solid #81c784; margin-right: 0.5rem;">
       Abstract
     </button>
-    <a href="mailto:liuyifan@gatech.edu" class="btn btn-sm" style="background-color: white; color: #81c784; border: 1px solid #81c784;">
+    <a href="mailto:yifan.liu@gatech.edu" class="btn btn-sm" style="background-color: white; color: #81c784; border: 1px solid #81c784;">
       Email me for details
     </a>
     <div id="abstract-content" style="display: none; margin-top: 0.5rem; padding: 1rem; background-color: #f5f5f5; border-radius: 4px;">
