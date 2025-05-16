@@ -1,82 +1,39 @@
-{{ $page := . }}
+{{ $item := .}}
 
-<div class="card-simple">
-  <div class="article-content">
-    <div class="article-title">{{ $page.Title | plainify }}</div>
+<div style="margin-bottom: 2rem;">
+    <div style="color: black; font-size: 1.1rem; margin-bottom: 1rem;">
+        {{ $item.Title }}
+    </div>
     
-    {{ with $page.Params.authors }}
-    <div class="article-authors">{{ delimit . ", " }}</div>
-    {{ end }}
-  </div>
+    <div style="color: #666; margin-bottom: 1rem;">
+        {{ with $item.Params.authors }}
+            {{ delimit . ", " }}
+        {{ end }}
+    </div>
 
-  <div class="article-abstract-row">
-    <button class="abstract-toggle-btn" onclick="toggleAbstract('abstract-{{ $page.File.UniqueID }}')">Abstract</button>
-    <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $page.Title }}" class="email-btn">Email me for details</a>
-  </div>
-  <div id="abstract-{{ $page.File.UniqueID }}" class="abstract-content" style="display: none;">
-    {{ with $page.Params.abstract }}
-      {{ . | markdownify }}
-    {{ end }}
-  </div>
+    <div style="display: flex; gap: 0.5rem;">
+        <button onclick="toggleAbstract('abstract-{{ $item.File.UniqueID }}')" 
+                style="border: 2px solid #81c784; background: none; color: #2e7d4f; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+            Abstract
+        </button>
+        <a href="mailto:liuyifan@gatech.edu?subject=Regarding: {{ $item.Title }}" 
+           style="border: 2px solid #81c784; background: none; color: #2e7d4f; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;">
+            Email me for details
+        </a>
+    </div>
+
+    <div id="abstract-{{ $item.File.UniqueID }}" style="display: none; margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-radius: 4px;">
+        {{ $item.Params.abstract }}
+    </div>
 </div>
-
-<style>
-.card-simple {
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.article-content {
-  margin-bottom: 1rem;
-}
-.article-title {
-  font-size: 1.1em;
-  margin-bottom: 0.3em;
-}
-.article-authors {
-  color: #666;
-  font-size: 0.95em;
-}
-.article-abstract-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em;
-}
-.abstract-toggle-btn, .email-btn {
-  font-weight: 500;
-  color: #2e7d4f;
-  background: none;
-  border: 2px solid #81c784;
-  border-radius: 6px;
-  font-size: 0.9em;
-  padding: 0.3em 0.8em;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-.abstract-toggle-btn:hover, .email-btn:hover {
-  background: #81c784;
-  color: #fff;
-}
-.abstract-content {
-  color: #666;
-  margin-top: 0.8em;
-  padding: 1em;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-  font-size: 0.95em;
-  line-height: 1.5;
-}
-</style>
 
 <script>
 function toggleAbstract(id) {
-  var x = document.getElementById(id);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 </script> 

@@ -1,5 +1,6 @@
 ---
-title: '[Reliability of electric vehicle charging infrastructure: A cross-lingual deep learning approach](https://doi.org/10.1016/j.commtr.2023.100095)'
+title: "Reliability of electric vehicle charging infrastructure: A cross-lingual deep learning approach"
+doi: "https://doi.org/10.1016/j.commtr.2023.100095"
 authors:
 - Yifan Liu
 - Azell Francis
