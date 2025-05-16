@@ -6,7 +6,6 @@
   {{/* Author */}}
   {{ $authorLen := len $item.Params.authors }}
   {{ if gt $authorLen 0 }}
-  <div class="article-metadata">
     {{ range $index, $author := $item.Params.authors }}
       {{- if eq $author "Yifan Liu" -}}
         <strong>{{ $author }}</strong>
@@ -14,11 +13,10 @@
         {{ $author }}
       {{- end -}}
       {{- if lt $index (sub $authorLen 1) -}}, {{ end }}
-    {{ end }}
-  </div>
+    {{ end }}.
   {{ end }}
 
-  {{/* Paper Title with DOI link and underline */}}
+  {{/* Paper Title with DOI link */}}
   {{ if $item.Params.url_pdf }}
     <a href="{{ $item.Params.url_pdf }}" target="_blank" style="text-decoration: underline;">{{ $item.Title }}</a>.
   {{ else }}
