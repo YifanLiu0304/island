@@ -1,20 +1,17 @@
 {{ $item := . }}
 
-<div style="margin: 2rem 0; font-size: 1rem; line-height: 1.5;">
-    <!-- Citation text -->
-    <div style="margin-bottom: 1rem;">
-        {{ range $index, $author := $item.Params.authors }}
-            {{- if eq $index 0 }}{{ $author | markdownify }}
-            {{- else }}, {{ $author | markdownify }}
-            {{- end -}}
-        {{ end }}
-        ({{ $item.Date.Format "2006" }}).
-        <a href="{{ $item.Params.doi }}" style="color: inherit; text-decoration: underline;">
-            {{ $item.Title }}
-        </a>.
-        {{ $item.Params.publication }}
-    </div>
+<div style="margin: 2rem; font-size: 1.1rem; line-height: 1.6;">
+    {{ range $index, $author := $item.Params.authors }}
+        {{- if eq $index 0 }}{{ $author | markdownify }}
+        {{- else }}, {{ $author | markdownify }}
+        {{- end -}}
+    {{ end }}
+    ({{ $item.Date.Format "2006" }}).
+    <a href="{{ $item.Params.doi }}" style="color: inherit; text-decoration: underline;">{{ $item.Title }}</a>.
+    {{ $item.Params.publication }}
+</div>
 
+<div style="margin: 2rem 0; font-size: 1rem; line-height: 1.5;">
     <!-- Buttons -->
     <div style="display: flex; gap: 1rem;">
         <button onclick="toggleAbstract()" 
