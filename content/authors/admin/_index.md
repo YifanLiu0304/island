@@ -83,7 +83,7 @@ education:
 work:
   - position: Visiting Doctoral Researcher
     company_name: Harvard Business School
-    company_url: ''
+    company_url: 'https://d3.harvard.edu/labs/climate-and-sustainability-impact-lab/'
     company_logo: ''
     date_start: 2023-09-01
     date_end: ''
@@ -124,15 +124,15 @@ skills:
       - name: Hiking
         description: ''
         percent: 90
-        icon: person-simple-walk
+        icon: 🧗
       - name: Scuba Diving
         description: ''
         percent: 85
-        icon: water
+        icon: 🤿
       - name: Photography
         description: ''
         percent: 85
-        icon: camera
+        icon: 📷
 
 languages:
   - name: Chinese
