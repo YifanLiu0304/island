@@ -32,7 +32,7 @@ sections:
           parallax: false
   - block: collection
     content:
-      title: Publications
+      title: Research
       text: ""
       filters:
         folders:
