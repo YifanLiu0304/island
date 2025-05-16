@@ -1,33 +1,18 @@
-{{ $item := .}}
+{{ $item := . }}
 
-<!-- Debug info to see what we're getting -->
-<div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px;">
-    <h3 style="color: #000000; margin: 0 0 10px 0;">
-        {{ if .Title }}
-            {{ .Title }}
-        {{ else }}
-            NO TITLE FOUND
+<div style="margin-bottom: 2rem;">
+    <div style="color: #000000; font-size: 1.1rem; margin-bottom: 1rem;">
+        {{ $item.Title }}
+    </div>
+    
+    <div style="color: #666666; margin-bottom: 1rem;">
+        {{ with $item.Params.authors }}
+            {{ delimit . ", " }}
         {{ end }}
-    </h3>
-
-    <p style="color: #666666; margin: 0 0 15px 0;">
-        {{ if .Params.authors }}
-            {{ delimit .Params.authors ", " }}
-        {{ else }}
-            NO AUTHORS FOUND
-        {{ end }}
-    </p>
-
-    <p style="color: #666666; margin: 0 0 15px 0;">
-        {{ if .Params.publication }}
-            {{ .Params.publication }}
-        {{ else }}
-            NO PUBLICATION INFO FOUND
-        {{ end }}
-    </p>
+    </div>
 
     <div style="display: flex; gap: 10px;">
-        <button onclick="toggleAbstract_{{ .File.UniqueID }}()" 
+        <button onclick="toggleAbstract('abstract-{{ $item.File.UniqueID }}')" 
                 style="border: 2px solid #81c784; background: white; color: #2e7d4f; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
             Abstract
         </button>
@@ -37,18 +22,18 @@
         </a>
     </div>
 
-    <div id="abstract_{{ .File.UniqueID }}" style="display: none; margin-top: 15px; padding: 15px; background: #f5f5f5;">
-        {{ if .Params.abstract }}
-            {{ .Params.abstract }}
-        {{ else }}
-            NO ABSTRACT FOUND
-        {{ end }}
+    <div id="abstract-{{ $item.File.UniqueID }}" style="display: none; margin-top: 15px; padding: 15px; background: #f5f5f5;">
+        {{ $item.Params.abstract }}
     </div>
 </div>
 
 <script>
-function toggleAbstract_{{ .File.UniqueID }}() {
-    var x = document.getElementById('abstract_{{ .File.UniqueID }}');
-    x.style.display = x.style.display === 'none' ? 'block' : 'none';
+function toggleAbstract(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
 }
 </script> 
