@@ -17,7 +17,7 @@ sections:
       # Show a call-to-action button under your biography? (optional)
       button:
         text: Download CV
-        url: uploads/CV_YifanLiu_20250309.pdf
+        url: uploads/CV_YifanLiu_20250505.pdf
     design:
       css_class: dark
       background:
