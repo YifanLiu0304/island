@@ -164,6 +164,13 @@ awards:
     awarder: National Academies Transportation Research Board (TRB)
     summary: |
       Awarded for the paper "Effectiveness of Health and Environmental Provision to Promote Sustainable Travel Modes" at the TRB conference in Washington, D.C.
+
+# Globetrotter section
+globetrotter:
+  title: Globetrotter
+  subtitle: My Travel Adventures
+  content: |
+    {{< world-map >}}
 ---
 
 ## About Me

@@ -1,0 +1,182 @@
+<!-- Load Leaflet CSS and JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<style>
+#travel-map {
+    height: 600px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+.city-popup {
+    font-family: 'Inter', sans-serif;
+    padding: 15px;
+    max-width: 300px;
+}
+.city-popup h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1.2em;
+    border-bottom: 2px solid #1a8870;
+    padding-bottom: 5px;
+}
+.city-popup .meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+.city-popup .quick-info {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+.btn-explore {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #1a8870;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+.btn-explore:hover {
+    background: #146d59;
+}
+.city-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.city-btn {
+    padding: 8px 16px;
+    border: 1px solid #1a8870;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+.city-btn:hover, .city-btn.active {
+    background: #1a8870;
+    color: white;
+}
+</style>
+
+<div class="city-filter">
+    <button class="city-btn" data-city="all">All Cities</button>
+    <button class="city-btn" data-city="boston">Boston</button>
+    <button class="city-btn" data-city="atlanta">Atlanta</button>
+    <button class="city-btn" data-city="paris">Paris</button>
+</div>
+
+<div id="travel-map"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the map centered on the Atlantic
+    var map = L.map('travel-map').setView([42.3601, -45.7538], 4);
+
+    // Add a stylish tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '©OpenStreetMap, ©CartoDB',
+        maxZoom: 19
+    }).addTo(map);
+
+    // Define city information
+    const cities = [
+        {
+            name: "Boston",
+            coordinates: [42.3601, -71.0589],
+            url: "/travel/boston",
+            quickInfo: {
+                known: "Education, History, Innovation",
+                bestTime: "September-October",
+                highlights: "Freedom Trail, Harvard, Fenway"
+            },
+            description: "A city where colonial history meets cutting-edge innovation"
+        },
+        {
+            name: "Atlanta",
+            coordinates: [33.7490, -84.3880],
+            url: "/travel/atlanta",
+            quickInfo: {
+                known: "Southern Culture, Civil Rights, Tech Hub",
+                bestTime: "March-May, September-November",
+                highlights: "Georgia Tech, Beltline, MLK Sites"
+            },
+            description: "The cultural and economic center of the American South"
+        },
+        {
+            name: "Paris",
+            coordinates: [48.8566, 2.3522],
+            url: "/travel/paris",
+            quickInfo: {
+                known: "Art, Cuisine, Fashion",
+                bestTime: "April-June, September-October",
+                highlights: "Louvre, Eiffel Tower, Le Marais"
+            },
+            description: "The City of Light, where every street tells a story"
+        }
+    ];
+
+    // Custom marker icon
+    const customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: '<span style="background-color: #1a8870; width: 12px; height: 12px; display: block; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3);"></span>',
+        iconSize: [16, 16]
+    });
+
+    // Add markers with enhanced popups
+    const markers = cities.map(city => {
+        const marker = L.marker(city.coordinates, {icon: customIcon})
+            .addTo(map)
+            .bindPopup(`
+                <div class="city-popup">
+                    <h3>${city.name}</h3>
+                    <div class="meta">${city.description}</div>
+                    <div class="quick-info">
+                        <strong>Known for:</strong> ${city.quickInfo.known}<br>
+                        <strong>Best time:</strong> ${city.quickInfo.bestTime}<br>
+                        <strong>Highlights:</strong> ${city.quickInfo.highlights}
+                    </div>
+                    <a href="${city.url}" class="btn-explore">Explore ${city.name}</a>
+                </div>
+            `);
+        return {marker, city};
+    });
+
+    // City filter functionality
+    document.querySelectorAll('.city-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedCity = this.dataset.city;
+            
+            // Update button states
+            document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            if (selectedCity === 'all') {
+                markers.forEach(({marker}) => {
+                    marker.addTo(map);
+                });
+                map.setView([42.3601, -45.7538], 4);
+            } else {
+                const cityData = cities.find(city => city.name.toLowerCase() === selectedCity);
+                markers.forEach(({marker, city}) => {
+                    if (city.name.toLowerCase() === selectedCity) {
+                        marker.addTo(map);
+                        map.setView(city.coordinates, 12);
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
+            }
+        });
+    });
+});
+</script> 
