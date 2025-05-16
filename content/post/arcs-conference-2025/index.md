@@ -1,7 +1,7 @@
 ---
 title: I will be presenting at the Alliance for Research on Corporate Sustainability (ARCS) Annual Research Conference in Paris
 summary: 17th Annual ARCS Research Conference at HEC Paris, June 1-4, 2025
-date: 2025-06-01
+date: 2099-06-01
 external_link: https://corporate-sustainability.org/conferences/
 
 authors:
