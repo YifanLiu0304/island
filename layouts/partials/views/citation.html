@@ -23,16 +23,18 @@
     <u>{{ $item.Title }}</u>.
   {{ end }}
 
-  {{/* Journal/Event details - only show if they exist */}}
-  {{ if $item.Params.publication }}
-    <em>{{ $item.Params.publication | markdownify }}</em>,
-  {{ else if $item.Params.event }}
-    {{ with $item.Params.event_url }}<a href="{{ . }}" target="_blank">{{ end }}
-    {{ $item.Params.event | markdownify }}
-    {{ if $item.Params.event_url }}</a>{{ end }},
-  {{ end }}
-  {{ if $item.Params.publishDate }}
-    {{ dateFormat "2006" $item.Params.publishDate }}
+  {{/* Journal/Event details and date - skip both for working papers */}}
+  {{ if ne (index $item.Params.publication_types 0) "working-paper" }}
+    {{ if $item.Params.publication }}
+      <em>{{ $item.Params.publication | markdownify }}</em>,
+    {{ else if $item.Params.event }}
+      {{ with $item.Params.event_url }}<a href="{{ . }}" target="_blank">{{ end }}
+      {{ $item.Params.event | markdownify }}
+      {{ if $item.Params.event_url }}</a>{{ end }},
+    {{ end }}
+    {{ if $item.Params.publishDate }}
+      {{ dateFormat "2006" $item.Params.publishDate }}
+    {{ end }}
   {{ end }}
 
   {{/* Buttons */}}
