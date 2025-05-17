@@ -6,7 +6,7 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: Global Adventures
+      title: veni, vidi
       subtitle: Exploring the world, one story at a time
       text: |
         {{< world-map >}}
