@@ -43,15 +43,17 @@
     display: inline-block;
     padding: 8px 16px;
     background: #1a8870;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
     border-radius: 5px;
     font-size: 0.9em;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: 10px;
 }
-.btn-explore:hover {
+.btn-explore:hover, .btn-explore:visited, .btn-explore:active, .btn-explore:link {
     background: #146d59;
+    color: white !important;
+    text-decoration: none !important;
 }
 .city-filter {
     display: flex;
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="quick-info">
                         <strong>Highlights:</strong> ${city.quickInfo.highlights}
                     </div>
-                    <a href="${city.url}" class="btn-explore">Explore ${city.name}</a>
+                    <a href="${city.url}" class="btn-explore" style="color: white !important; text-decoration: none !important;">Explore ${city.name}</a>
                 </div>
             `);
         return {marker, city};
