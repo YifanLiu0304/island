@@ -79,9 +79,29 @@
 
 <div class="city-filter">
     <button class="city-btn" data-city="all">All Cities</button>
+    <!-- US Cities -->
     <button class="city-btn" data-city="boston">Boston</button>
+    <button class="city-btn" data-city="new york">New York</button>
+    <button class="city-btn" data-city="washington dc">Washington DC</button>
     <button class="city-btn" data-city="atlanta">Atlanta</button>
+    <button class="city-btn" data-city="san francisco">San Francisco</button>
+    <button class="city-btn" data-city="portland">Portland</button>
+    <button class="city-btn" data-city="seattle">Seattle</button>
+    <button class="city-btn" data-city="honolulu">Honolulu</button>
+    <!-- Chinese Cities -->
+    <button class="city-btn" data-city="beijing">Beijing</button>
+    <button class="city-btn" data-city="shanghai">Shanghai</button>
+    <button class="city-btn" data-city="hong kong">Hong Kong</button>
+    <button class="city-btn" data-city="weihai">Weihai</button>
+    <!-- European Cities -->
     <button class="city-btn" data-city="paris">Paris</button>
+    <button class="city-btn" data-city="marseille">Marseille</button>
+    <button class="city-btn" data-city="berlin">Berlin</button>
+    <button class="city-btn" data-city="vienna">Vienna</button>
+    <button class="city-btn" data-city="graz">Graz</button>
+    <button class="city-btn" data-city="bucharest">Bucharest</button>
+    <!-- South American Cities -->
+    <button class="city-btn" data-city="lima">Lima</button>
 </div>
 
 <div id="travel-map"></div>
@@ -125,6 +145,150 @@ document.addEventListener('DOMContentLoaded', function() {
                 highlights: "Louvre, Eiffel Tower, Le Marais"
             },
             description: "The City of Light, where every street tells a story"
+        },
+        {
+            name: "Beijing",
+            coordinates: [39.9042, 116.4074],
+            url: "../travel/beijing",
+            quickInfo: {
+                highlights: "Great Wall, Forbidden City, Temple of Heaven"
+            },
+            description: "Ancient capital blending imperial history with modern China"
+        },
+        {
+            name: "Shanghai",
+            coordinates: [31.2304, 121.4737],
+            url: "../travel/shanghai",
+            quickInfo: {
+                highlights: "The Bund, Yu Garden, Pudong Skyline"
+            },
+            description: "China's dynamic financial center and innovation hub"
+        },
+        {
+            name: "Hong Kong",
+            coordinates: [22.3193, 114.1694],
+            url: "../travel/hong-kong",
+            quickInfo: {
+                highlights: "Victoria Peak, Harbor, Dim Sum"
+            },
+            description: "Where East meets West in a vibrant harbor city"
+        },
+        {
+            name: "Weihai",
+            coordinates: [37.5279, 122.0614],
+            url: "../travel/weihai",
+            quickInfo: {
+                highlights: "Coastal Parks, Liugong Island, Seafood"
+            },
+            description: "Scenic coastal city with rich naval history"
+        },
+        {
+            name: "New York",
+            coordinates: [40.7128, -74.0060],
+            url: "../travel/new-york",
+            quickInfo: {
+                highlights: "Central Park, Times Square, Museums"
+            },
+            description: "The city that never sleeps, global cultural capital"
+        },
+        {
+            name: "Washington DC",
+            coordinates: [38.9072, -77.0369],
+            url: "../travel/washington-dc",
+            quickInfo: {
+                highlights: "National Mall, Smithsonian, Capitol"
+            },
+            description: "America's capital, rich in history and politics"
+        },
+        {
+            name: "San Francisco",
+            coordinates: [37.7749, -122.4194],
+            url: "../travel/san-francisco",
+            quickInfo: {
+                highlights: "Golden Gate, Silicon Valley, Fisherman's Wharf"
+            },
+            description: "Tech hub with stunning bay views and diverse culture"
+        },
+        {
+            name: "Portland",
+            coordinates: [45.5155, -122.6789],
+            url: "../travel/portland",
+            quickInfo: {
+                highlights: "Powell's Books, Food Trucks, Forest Park"
+            },
+            description: "Keep Portland Weird - eco-friendly and artistically vibrant"
+        },
+        {
+            name: "Seattle",
+            coordinates: [47.6062, -122.3321],
+            url: "../travel/seattle",
+            quickInfo: {
+                highlights: "Space Needle, Pike Place, Coffee Culture"
+            },
+            description: "Emerald City where tech meets nature"
+        },
+        {
+            name: "Lima",
+            coordinates: [-12.0464, -77.0428],
+            url: "../travel/lima",
+            quickInfo: {
+                highlights: "Historic Center, Gastronomy, Miraflores"
+            },
+            description: "Peru's capital, known for history and cuisine"
+        },
+        {
+            name: "Honolulu",
+            coordinates: [21.3069, -157.8583],
+            url: "../travel/hawaii",
+            quickInfo: {
+                highlights: "Waikiki, Pearl Harbor, North Shore"
+            },
+            description: "Paradise in the Pacific with rich Polynesian culture"
+        },
+        {
+            name: "Bucharest",
+            coordinates: [44.4268, 26.1025],
+            url: "../travel/bucharest",
+            quickInfo: {
+                highlights: "Parliament Palace, Old Town, Revolution Square"
+            },
+            description: "Romania's capital, mixing old world charm with modern energy"
+        },
+        {
+            name: "Vienna",
+            coordinates: [48.2082, 16.3738],
+            url: "../travel/vienna",
+            quickInfo: {
+                highlights: "Schönbrunn Palace, Opera House, Cafes"
+            },
+            description: "City of music, art, and imperial grandeur"
+        },
+        {
+            name: "Graz",
+            coordinates: [47.0707, 15.4395],
+            url: "../travel/graz",
+            quickInfo: {
+                highlights: "Schlossberg, Old Town, Modern Art"
+            },
+            description: "Austria's second city, UNESCO cultural heritage site"
+        },
+        {
+            name: "Berlin",
+            coordinates: [52.5200, 13.4050],
+            url: "../travel/berlin",
+            quickInfo: {
+                highlights: "Brandenburg Gate, East Side Gallery, Museums"
+            },
+            description: "Germany's vibrant capital, rich in history and culture"
+        },
+        {
+            name: "Marseille",
+            coordinates: [43.2965, 5.3698],
+            url: "../travel/marseille",
+            quickInfo: {
+                highlights: "Vieux-Port, Notre-Dame, Calanques"
+            },
+            description: "France's oldest city, Mediterranean gateway"
         }
     ];
 
