@@ -23,7 +23,7 @@
     <u>{{ $item.Title }}</u>.
   {{ end }}
 
-  {{/* Journal/Event details */}}
+  {{/* Journal/Event details - only show if they exist */}}
   {{ if $item.Params.publication }}
     <em>{{ $item.Params.publication | markdownify }}</em>,
   {{ else if $item.Params.event }}
@@ -31,7 +31,9 @@
     {{ $item.Params.event | markdownify }}
     {{ if $item.Params.event_url }}</a>{{ end }},
   {{ end }}
-  {{ dateFormat "2006" $item.Params.publishDate }}
+  {{ if $item.Params.publishDate }}
+    {{ dateFormat "2006" $item.Params.publishDate }}
+  {{ end }}
 
   {{/* Buttons */}}
   <div style="margin-top: 0.5rem;">
