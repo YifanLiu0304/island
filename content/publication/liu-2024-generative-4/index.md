@@ -2,7 +2,7 @@
 title: 'Generative AI and electric vehicle service operations in urban and remote areas'
 authors:
 - Yifan Liu
-- Omar I Asensio
+- Omar I. Asensio
 date: '2024-07-01'
 publishDate: '2024-07-01'
 publication_types:

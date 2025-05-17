@@ -5,7 +5,7 @@ authors:
 - Yifan Liu
 - Md Gulam Kibria
 - Srinivas Peeta
-- Omar I Asensio
+- Omar I. Asensio
 date: '2025-01-06'
 publishDate: '2025-01-06'
 publication_types:

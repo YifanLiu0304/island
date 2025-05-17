@@ -4,7 +4,7 @@ authors:
 - Yifan Liu
 - Catharina Hollauer
 - M Cade Lawson
-- Omar I Asensio
+- Omar I. Asensio
 date: '2022-07-01'
 publishDate: '2022-07-01'
 publication_types:

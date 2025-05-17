@@ -2,7 +2,7 @@
 title: 'Why is electric vehicle (EV) charging so unreliable? The role of competition in supplementary services'
 authors:
 - Yifan Liu
-- Omar I Asensio
+- Omar I. Asensio
 - Mike W Toffel
 date: '2024-01-01'
 publishDate: '2024-01-01'

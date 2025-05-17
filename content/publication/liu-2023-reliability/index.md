@@ -12,7 +12,7 @@ authors:
 - Aline Banboukian
 - Mimi Li
 - Anne Webb
-- Omar I Asensio
+- Omar I. Asensio
 date: '2025-02-01'
 publishDate: '2023-12-01'
 publication_types:
