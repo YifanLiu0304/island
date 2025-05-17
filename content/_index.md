@@ -43,11 +43,22 @@ sections:
   - block: collection
     id: research
     content:
-      title: Research
+      title: Publications
       text: ""
       filters:
         folders:
           - publication
+        exclude_featured: false
+    design:
+      view: citation
+  - block: collection
+    id: working-papers
+    content:
+      title: Working Papers
+      text: ""
+      filters:
+        folders:
+          - working-papers
         exclude_featured: false
     design:
       view: citation
