@@ -2,8 +2,8 @@
 title: 'Effectiveness of Health and Environmental Information Provision in Promoting Sustainable Travel Modes'
 authors:
 - Viswa Sri Rupa Anne
-- Yifan Liu
 - Md Gulam Kibria
+- Yifan Liu
 - Srinivas Peeta
 - Omar I. Asensio
 date: '2025-01-06'
