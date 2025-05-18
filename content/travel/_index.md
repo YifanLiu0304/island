@@ -2,6 +2,9 @@
 title: Travel Stories
 cms_exclude: true
 type: landing
+_build:
+  render: true
+  list: never
 
 sections:
   - block: markdown
